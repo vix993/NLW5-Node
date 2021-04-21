@@ -1,5 +1,7 @@
 import express from "express";
 
+import "./database";
+
 const app = express();
 
 app.get("/", (request, response) => {
@@ -8,7 +10,7 @@ app.get("/", (request, response) => {
     });
 });
 
-app.post("/users      ", (request, response) => {
+app.post("/users", (request, response) => {
     return response.json({
         message: "User saved!"
     });
