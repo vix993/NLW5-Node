@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { UsersService } from "../services/UsersServices"
 
-class UsersComtroller {
+class UsersController {
     async create(request: Request, response: Response): Promise<Response> {
         const { email } = request.body;
 
@@ -13,4 +13,4 @@ class UsersComtroller {
     }
 }
 
-export { UsersComtroller }
+export { UsersController }
