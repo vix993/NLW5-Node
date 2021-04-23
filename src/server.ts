@@ -1,13 +1,4 @@
-import express from "express";
+import { http } from "./http";
+import "./websocket/client";
 
-import "./database";
-
-import { routes } from "./routes";
-
-const app = express();
-
-app.use(express.json());
-
-app.use(routes);
-
-export const server = app.listen(8080, () => console.log("Server is running on port 8080"));
+export const server = http.listen(8080, () => console.log("Server is running on port 8080"));

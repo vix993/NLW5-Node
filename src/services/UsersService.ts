@@ -22,7 +22,7 @@ class UsersService {
             return userExists;
         }
 
-        const user = this.usersRepository.create({
+        const user = await this.usersRepository.create({
             email
         });
 
@@ -30,8 +30,12 @@ class UsersService {
 
         // else return id
         return user;
+    }
 
+    async findByEmail(email: string) {
+        const user = await this.usersRepository.findOne({ email });
 
+        return user;
     }
 }
 
